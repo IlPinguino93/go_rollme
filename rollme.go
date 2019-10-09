@@ -39,7 +39,7 @@ func main() {
 	}
 
 	// Each roll consists of the DnD writing style - for example, 1d6 would be 1 dice with 6 sides.
-	validroll := false
+	validroll := false // Flips to true once there was a single valid roll - if there's none, the usage is displayed.
 	for _, roll := range rolls {
 
 		fmt.Println("Roll ", roll, ": ")
@@ -49,23 +49,23 @@ func main() {
 			continue
 		}
 		count, err := strconv.Atoi(rolldata[0])
-		if err != nil {
+		if err != nil { // First number not correct (like roll nd7 or xd20)
 			fmt.Println("Syntax Error in roll", roll)
 			continue
 		}
 		dice, err := strconv.Atoi(rolldata[1])
-		if err != nil {
+		if err != nil { // Second number not correct (like roll 4dx or 1dl)
 			fmt.Println("Syntax Error in roll", roll)
 			continue
 		}
 
-		for i := 0; i < count; i++ {
+		for i := 0; i < count; i++ { // Roll syntax is correct. Roll it.
 			fmt.Println(i, ":", rand.Intn(dice)+1) // Intn poduces 0 < n < max, we want to eliminate 1
-			validroll = true
+			validroll = true                       // Do not display usage. User knows what they're doing (apparently).
 		}
 	}
 
-	if !validroll {
+	if !validroll { // No valid rolls? Show Usage.
 		usage("No valid rolls found.")
 	}
 
