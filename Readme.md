@@ -20,4 +20,8 @@ Simple dice roll as a commandline utility for all your dice rolling needs.
 
 ## Disclaimer
 
-I'm not responsible for money lost, beverages spent, clothing removed or other damages due to gambling games played with this. This does not use a cryptographically secure random generator. If you require more secure random diceroll generation, I recommend using actual hardware dice or seeing a therapist for your paranoia. You must be fun at parties. 
+I'm not responsible for money lost, beverages spent, clothing removed or other damages due to gambling games played with this. 
+
+This software does not use a cryptographically secure random generator. 
+
+If you require more secure random diceroll generation, I recommend using actual hardware dice or seeing a therapist for your paranoia. You must be fun at parties. 
